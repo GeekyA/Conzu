@@ -1,0 +1,182 @@
+{% load static %}
+
+<!DOCTYPE <!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Showing news</title> 
+        <script src="https://kit.fontawesome.com/5472e0e3de.js" crossorigin="anonymous"></script>
+        <style>
+          
+          .navbar{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            
+            margin: 0;
+          }
+          
+          
+          
+          .nav ul li{
+            list-style: none;
+            margin: 35px 0;
+            
+          }
+          
+          .nav ul li a{
+            text-decoration: none;
+            font-size: 60px;
+            color: #fff;
+            padding: 25px;
+            letter-spacing: 5px;
+            position: relative;
+            }
+          
+          
+          .nav ul li a::after{
+            content: '';
+            height: 3px;
+            width: 0;
+            background: #eea16d;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: width 0.5s;
+          }
+          
+          .nav ul li a:hover::after{
+            width: 100%;
+          }
+          
+          .nav{
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            z-index: 2;
+            top: -100vh;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: 1s;
+          }
+          
+          
+          .lite-text{
+            color: #333;
+            font-size: 200px;
+            letter-spacing: 100px;
+            opacity: 0.1;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 800;
+            z-index: -1;
+          }
+          
+          .close-icon{
+            width: 5cm;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            cursor: pointer;
+            font-size: 20em;
+            color: #fff;
+          }
+          
+          .openmenu{
+            position: absolute;
+            top: .5cm;
+            left: 1cm;
+            cursor: pointer;
+            width: 5cm;
+          }
+          
+          .closemenu{
+            position: fixed;
+            right: 0cm;
+            top: 0;
+            cursor: pointer;
+            width: 5cm;
+          }
+        </style>
+    </head>
+    <link rel='stylesheet' href="{% static 'show_news/style.css' %}" rel="stylesheet">
+    <body>
+
+
+      <div class="container">
+        <div class="navbar">
+
+
+          <nav id="menu" class="nav">
+            <ul>
+              <li><a href="{% url 'show_news' %}">News</a></li>
+              <li><a href="{% url 'aboutus' %}">Our Team</a></li>
+            </ul>
+
+            <p class="lite-text">MENU</p>
+            <a class="close-icon" onclick="closemenu()" style="font-size: 3.5rem;">
+              <i class="fas fa-times-circle" alt="menu" ></i>
+            </a>  
+          </nav>
+
+
+          <a  class="openmenu" onclick="openmenu()" style="font-size: 3.5rem; right:0; color:white">
+            <i class="fas fa-bars" alt="menu" ></i>
+          </a>
+        </div>
+      </div>
+
+      
+      <h1 class="logo" style="--text: 'ƈօռʐօʊ'; font-size:120px;"><span>ƈօռʐօʊ</span></h1>
+
+  <div class="box">
+
+    <div class="grid">
+      {% if data %}
+        {% for dpoint in data %}
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="https://i.ibb.co/GH7pCt5/4.png" alt="Oof" />
+              <div class="card-content">
+                      
+                <p class="card-header" style="font-size:x-large; font-family: Arial, Helvetica, sans-serif; font-weight: 500; text-align: justify;">{{dpoint.title}}</p>
+                      
+                  <p class="card-text">
+                  <strong style="font-size:medium; font-family: Arial, Helvetica, sans-serif; font-weight: 500; text-align: justify;font-weight: bold">Source: {{dpoint.source}}</strong>
+                  </p>    
+                  
+                  <a style="text-decoration:none;font-size:xx-large; font-family: 'Lucida Console', 'Courier New', monospace; font-weight: 500;" href={{dpoint.link}}>
+                    <input class=card-btn type="button" value="Read more" />
+                 </a>
+                 
+                
+                  
+              </div>
+            </div>
+          </div>  
+        
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  </div>
+
+  <script>
+    var menu = document.getElementById("menu")
+
+    function closemenu(){
+      menu.style.top = "-100vh";
+    }
+
+    function openmenu(){
+      menu.style.top = "0";
+    }
+ </script> 
+      
+    </body>
+</html>

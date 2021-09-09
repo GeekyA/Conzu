@@ -1,0 +1,425 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>About us</title>
+  <!--<link rel='stylesheet' href="{% static 'show_news/style1.css' %}" rel="stylesheet"> -->
+  <script src="https://kit.fontawesome.com/5472e0e3de.js" crossorigin="anonymous"></script>
+  <style>
+
+    *{
+      margin: 0;
+    }
+    head {
+      margin: 0px;
+      font-family: latha;
+      color: white;
+      font-family: "Poppins", sans-serif;
+      display: inline;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    
+body{
+  font-family: latha;
+  color: white;
+  font-family: Garamond, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+}
+
+@keyframes change{
+  0%{
+    background-position: 0 50%;
+  }
+
+50%{
+    background-position: 100% 50%;
+  }
+
+100%{
+    background-position: 0 50%;
+  }
+}
+
+.logo {
+ 
+  position: absolute;
+  top: 2cm;
+  left: 40%;
+  background: linear-gradient(10deg,   #7f5a83 0%, #0d324d 74%);
+  background-size: 400%;
+  font-size: 120px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 5px;
+  font-weight: 800;
+  word-spacing: 5px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: animate 10s linear infinite;
+  cursor: default;
+}
+
+
+
+@keyframes animate{
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 100%;
+  }
+}
+
+
+.navbar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  
+  margin: 0;
+}
+
+
+
+.nav ul li{
+  list-style: none;
+  margin: 15px 0;
+  
+}
+
+.nav ul li a{
+  text-decoration: none;
+  font-size: 60px;
+  color: #fff;
+  padding: 25px;
+  letter-spacing: 5px;
+  position: relative;
+  }
+
+
+.nav ul li a::after{
+  content: '';
+  height: 3px;
+  width: 0;
+  background: #eea16d;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.5s;
+}
+
+.nav ul li a:hover::after{
+  width: 100%;
+}
+
+.nav{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  z-index: 2;
+  top: -100vh;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: 1s;
+}
+
+
+.lite-text{
+  color: #333;
+  font-size: 200px;
+  letter-spacing: 100px;
+  opacity: 0.1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  z-index: -1;
+}
+
+.close-icon{
+  width: 2cm;
+  position: absolute;
+  right: 2cm;
+  top: 50px;
+  cursor: pointer;
+  font-size: 10em;
+  color: #fff;
+}
+
+.openmenu{
+  position: absolute;
+  top: .5cm;
+  left: 1cm;
+  cursor: pointer;
+  width: 2cm;
+}
+
+.closemenu{
+  position: fixed;
+  right: 0cm;
+  top: 0;
+  cursor: pointer;
+  width: 5cm;
+}
+
+.container1 {
+  height: 100vh;
+  width: 100vw;
+  max-height: 800px;
+  max-width: 1280px;
+  min-height: 600px;
+  min-width: 1000px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  position:absolute;
+  top: 0;
+  width: 100%;
+}
+
+.topnav .items {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 16.3px 15px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: sans-serif;
+}
+
+/* Change the color of links on hover */
+.topnav .items:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav .items.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.image{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.topnav .headings{
+  float: right;
+  background-color: #ddd;
+  color: black;
+  text-align: center;
+  padding: 16.4px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'poppins', sans-serif;
+}
+
+h2{
+  font-size: large;
+  position: absolute;
+
+}
+.border {
+  height: 369px;
+  width: 290px;
+  background: transparent;
+  border-radius: 10px;
+  transition: border 1s;
+  position: relative;
+}
+.border:hover {
+  border: 1px solid #fff;
+}
+.card {
+  height: 379px;
+  width: 300px;
+  background: #808080;
+  border-radius: 10px;
+  transition: background 0.8s;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 70px 63px -60px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+a{
+  text-decoration-line: none;
+  color: black;
+}
+.card0 {
+  background: url("https://i.ibb.co/cxyZcPt/21172245-Acp-KQXc8.jpg") center center no-repeat;
+  background-size: cover;
+  background-size: 400px;
+}
+.card0:hover {
+  background: url("https://i.ibb.co/cxyZcPt/21172245-Acp-KQXc8.jpg") left center no-repeat;
+  background-size: cover;
+  background-size: 450px;
+}
+.card0:hover h2 {
+  opacity: 1;
+}
+.card1:hover h3 {
+  opacity: 1;
+}
+.card0:hover .fa {
+  opacity: 1;
+}
+.card1 {
+  background: url("https://i.ibb.co/0rv8kGB/21174012-Gd-LMd-Y2-A.jpg") center center no-repeat;
+  background-size: 320px;
+}
+.card1:hover {
+  background: url("https://i.ibb.co/0rv8kGB/21174012-Gd-LMd-Y2-A.jpg") left center no-repeat;
+  background-size: 450px;
+}
+.card1:hover h2 {
+  left: 0;
+  opacity: 1;
+}
+
+.card1:hover h3 {
+  opacity: 1;
+}
+.card1:hover .fa {
+  opacity: 1;
+}
+.card2 {
+  background: url("https://i.pinimg.com/originals/ee/85/08/ee850842e68cfcf6e3943c048f45c6d1.jpg") center center no-repeat;
+  background-size: 300px;
+}
+.card2:hover {
+  background: url("https://i.pinimg.com/originals/ee/85/08/ee850842e68cfcf6e3943c048f45c6d1.jpg") left center no-repeat;
+  background-size: 600px;
+}
+.card2:hover h2 {
+  opacity: 1;
+}
+
+.card2:hover .fa {
+  opacity: 1;
+}
+h2, h3 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #fff;
+  color: gray;
+  margin: 10px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.fa {
+  opacity: 0;
+  transition: opacity 1s;
+}
+.icons {
+  position: absolute;
+  fill: #fff;
+  color: #fff;
+  height: 130px;
+  top: 226px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+  </style>
+</head>
+
+<body>
+  <h1 class="logo" style="--text: 'ƈօռʐօʊ'; top: 1cm;"><span>ƈօռʐօʊ</span></h1>
+  
+
+  <div class="container">
+    <div class="navbar">
+
+
+      <nav id="menu" class="nav">
+        <ul>
+          <li style="padding-bottom: 25px;"><a href="{% url 'show_news' %}">News</a></li>
+          <li><a href="{% url 'aboutus' %}">Our Team</a></li>
+        </ul>
+
+        <p class="lite-text">MENU</p>
+        <a class="close-icon" onclick="closemenu()" style="font-size: 2.5rem;">
+          <i class="fas fa-times-circle" alt="menu" ></i>
+        </a>  
+      </nav>
+
+
+      <a  class="openmenu" onclick="openmenu()" style="font-size: 2.5rem; right:0; color:white">
+        <i class="fas fa-bars" alt="menu" ></i>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="container1">
+    <div class="card card0">
+      <div class="border">
+        <h2>Ansh Chadha</h2>
+        <div class="icons">
+          <a href="https://www.instagram.com/ansh_chadha_163/" class="fa fa-instagram" aria-hidden="true"></a>
+          <a href="https://www.linkedin.com/in/ansh-chadha-659255b7/" class="fa fa-linkedin" aria-hidden="true"></a>
+          <a href="https://twitter.com/iaintkidding_" class="fa fa-twitter" aria-hidden="true"></a>
+          <a href="https://github.com/GeekyA" class="fa fa-github" aria-hidden="true"></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card card1">
+      <div class="border">
+        <h2>Verain Thakur</h2>
+        <div class="icons">
+          <a href="https://www.instagram.com/verainthakur/" class="fa fa-instagram" aria-hidden="true"></a>
+          <a href="https://www.linkedin.com/in/verain-thakur-675a0920b/" class="fa fa-linkedin" aria-hidden="true"></a>
+          <a href="https://github.com/verain1" class="fa fa-github" aria-hidden="true"></a>
+  
+        </div>
+      </div>
+    </div>
+
+
+  <script>
+    var menu = document.getElementById("menu")
+
+    function closemenu(){
+      menu.style.top = "-100vh";
+    }
+
+    function openmenu(){
+      menu.style.top = "0";
+    }
+ </script>
+</body>
+</html>
