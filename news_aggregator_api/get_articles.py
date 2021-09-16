@@ -11,10 +11,10 @@ def articles_from_csv(filtered=False):
     #d = pd.read_csv('C:/news_1/news_aggregator/articles.csv')
     if filtered:
         #d = pd.read_csv(linux_path+'news_aggregator/filtered.csv')
-        d = pd.read_csv('C:/news_1/news_aggregator-main/filtered.csv')
+        d = pd.read_csv(windows_path + '/filtered.csv')
     else:
         #d = pd.read_csv(linux_path+'news_aggregator/articles.csv')
-        d = pd.read_csv('C:/news_1/news_aggregator-main/articles.csv')
+        d = pd.read_csv(windows_path + '/articles.csv')
     d = d.to_dict('records')
     return d
     

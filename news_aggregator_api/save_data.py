@@ -24,7 +24,14 @@ filtered_data = full_data.iloc[0::3]
 linux_path = '/home/ansh/'
 windows_path = 'C:/news_1/'
 
+
+
 os.system('cd ..')
+'''
 full_data.to_csv(linux_path+'news_aggregator/articles.csv')
 filtered_data.to_csv(linux_path+'news_aggregator/filtered.csv')
+'''
+
+full_data.to_csv(windows_path+'articles.csv')
+filtered_data.to_csv(windows_path+'filtered.csv')
 
